@@ -3,11 +3,12 @@
     package="stageonepopmovies.udacity.com.popularmoviesstageone">
 
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
+        android:name=".MovieApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_app_icon_round"
         android:label="@string/app_name"

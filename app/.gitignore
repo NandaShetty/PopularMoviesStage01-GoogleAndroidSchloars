@@ -76,6 +76,7 @@ obj/
 .idea/modules.xml
 .idea/scopes/scope_settings.xml
 .idea/dictionaries
+.idea/sonarlint
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
 .idea/datasources.xml

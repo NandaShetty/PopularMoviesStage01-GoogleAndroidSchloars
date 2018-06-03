@@ -15,16 +15,17 @@ import java.util.List;
 
 import stageonepopmovies.udacity.com.popularmoviesstageone.R;
 import stageonepopmovies.udacity.com.popularmoviesstageone.models.PopularMovieResponse;
+import stageonepopmovies.udacity.com.popularmoviesstageone.models.Result;
 import stageonepopmovies.udacity.com.popularmoviesstageone.utils.MovieConstants;
 
 public class PopMovieAdapter extends RecyclerView.Adapter<PopMovieAdapter.ItemHolder> {
 
-    private List<PopularMovieResponse> movieResponseList = new ArrayList<>();
-    Context mcontext;
+    private List<Result> movieResponseList;
+    static Context mContext;
 
-    public PopMovieAdapter(List<PopularMovieResponse> movieResponses, Context context) {
-        movieResponses = movieResponseList;
-        context = mcontext;
+    public PopMovieAdapter(List<Result> movieResponses, Context context) {
+        this.movieResponseList = movieResponses;
+        PopMovieAdapter.mContext = context;
     }
 
     @NonNull
@@ -42,9 +43,9 @@ public class PopMovieAdapter extends RecyclerView.Adapter<PopMovieAdapter.ItemHo
 
 
         /*bind the view fro the list*/
-        String movieImageUrl = MovieConstants.MOVIE_IMAGE_URL.concat(movieResponseList.get(position).getResults().get(6).getPosterPath());
+        String movieImageUrl = MovieConstants.MOVIE_IMAGE_URL.concat(movieResponseList.get(position).getPosterPath());
 
-        Picasso.get().load(movieImageUrl).centerCrop().into(holder.movieView);
+        Picasso.get().load(movieImageUrl).into(holder.movieView);
 
 
     }
