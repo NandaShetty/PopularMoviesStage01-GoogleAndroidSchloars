@@ -94,4 +94,5 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="movie_api_key">b6b7a875d978c3b553d11ffae6765aee</string>
+    <string name="movie_overview">Overview</string>
 </resources>
