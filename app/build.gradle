@@ -44,4 +44,5 @@ dependencies {
 
 
 
+    implementation 'com.android.support:cardview-v7:27.1.1'
 }

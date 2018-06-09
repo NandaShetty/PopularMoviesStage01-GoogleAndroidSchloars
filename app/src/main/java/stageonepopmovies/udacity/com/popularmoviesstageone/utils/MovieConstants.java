@@ -17,6 +17,7 @@ public class MovieConstants {
     public static final String MOVIE_OVERVIEW = "movie_overView";
     public static final String MOVIE_VOTE_AVERAGE = "movie_vote_average";
     public static final String MOVIE_POSTER_VIEWS = "movie_poster_paths";
+    public static final String MOVIE_POPULARITY = "movie_popularity";
     public static final String POPULAR_MOVIES = "Most Popular";
     public static final String TOP_RATED = "Top Rated";
 }

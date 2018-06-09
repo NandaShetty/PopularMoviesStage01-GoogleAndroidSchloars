@@ -26,7 +26,7 @@ import stageonepopmovies.udacity.com.popularmoviesstageone.utils.MovieConstants;
 public class PopMovieAdapter extends RecyclerView.Adapter<PopMovieAdapter.ItemHolder> {
 
     private List<Result> movieResponseList;
-    private  Context mContext;
+    private Context mContext;
 
 
     public PopMovieAdapter(List<Result> movieResponses, Context context) {
@@ -64,6 +64,7 @@ public class PopMovieAdapter extends RecyclerView.Adapter<PopMovieAdapter.ItemHo
                 bundle.putString(MovieConstants.MOVIE_RELEASE_DATE, movieResponseList.get(position).getReleaseDate());
                 bundle.putString(MovieConstants.MOVIE_OVERVIEW, movieResponseList.get(position).getOverview());
                 bundle.putString(MovieConstants.MOVIE_VOTE_AVERAGE, String.valueOf(movieResponseList.get(position).getVoteAverage()));
+                bundle.putString(MovieConstants.MOVIE_POPULARITY, String.valueOf(movieResponseList.get(position).getPopularity()));
                 intent.putExtras(bundle);
 
                 mContext.startActivity(intent);
