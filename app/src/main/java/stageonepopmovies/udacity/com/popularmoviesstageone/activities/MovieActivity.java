@@ -1,10 +1,8 @@
 package stageonepopmovies.udacity.com.popularmoviesstageone.activities;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -19,9 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
-import com.androidnetworking.common.Priority;
-import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.ParsedRequestListener;
+
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
 
@@ -33,7 +29,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
-import stageonepopmovies.udacity.com.popularmoviesstageone.MovieApplication;
 import stageonepopmovies.udacity.com.popularmoviesstageone.R;
 import stageonepopmovies.udacity.com.popularmoviesstageone.adapters.PopMovieAdapter;
 import stageonepopmovies.udacity.com.popularmoviesstageone.models.PopularMovieResponse;
@@ -46,8 +41,11 @@ import static stageonepopmovies.udacity.com.popularmoviesstageone.utils.MovieCon
 public class MovieActivity extends AppCompatActivity {
 
     public MovieActivity activity;
+    private String moviePopularSelected;
+    private String moveTopRatedSelected;
 
 
+    private int id;
     public static final String TAG = MovieActivity.class.getSimpleName();
     private RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
@@ -80,6 +78,22 @@ public class MovieActivity extends AppCompatActivity {
 
 
     @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (null != savedInstanceState) {
+            moviePopularSelected = savedInstanceState.getString("MOVIE_POPULAR_MOVIES");
+            moveTopRatedSelected = savedInstanceState.getString("MOVIE_TOP_RATED");
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("MOVIE_POPULAR_MOVIES", moviePopularSelected);
+        outState.putString("MOVIE_TOP_RATED", moveTopRatedSelected);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_movie, menu);
@@ -92,7 +106,7 @@ public class MovieActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_most_popular) {
@@ -278,5 +292,6 @@ public class MovieActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         fetchThePopularMovies();
+
     }
 }

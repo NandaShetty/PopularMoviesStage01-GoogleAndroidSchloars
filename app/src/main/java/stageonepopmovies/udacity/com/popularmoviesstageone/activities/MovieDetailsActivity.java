@@ -1,13 +1,11 @@
 package stageonepopmovies.udacity.com.popularmoviesstageone.activities;
 
-import android.graphics.Movie;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,13 +24,14 @@ public class MovieDetailsActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private TextView mPopularity;
     private ProgressBar mProgress;
-
+    private String moviePopularSelected;
+    private String moveTopRatedSelected;
 
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_details_activity_new_one);
+        setContentView(R.layout.activity_movie_details_activity);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mPictureImage = findViewById(R.id.iv_movie_image);
@@ -71,6 +70,22 @@ public class MovieDetailsActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if(null != savedInstanceState){
+            moviePopularSelected = savedInstanceState.getString("MOVIE_POPULAR_MOVIES");
+            moveTopRatedSelected = savedInstanceState.getString("MOVIE_TOP_RATED");
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("MOVIE_POPULAR_MOVIES",moviePopularSelected);
+        outState.putString("MOVIE_TOP_RATED",moveTopRatedSelected);
     }
 
     @Override
