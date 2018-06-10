@@ -57,15 +57,12 @@ public class PopMovieAdapter extends RecyclerView.Adapter<PopMovieAdapter.ItemHo
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, MovieDetailsActivity.class);
-                Bundle bundle = new Bundle();
-
-                bundle.putString(MovieConstants.MOVIE_TITLE, movieResponseList.get(position).getTitle());
-                bundle.putString(MovieConstants.MOVIE_POSTER_VIEWS, movieResponseList.get(position).getPosterPath());
-                bundle.putString(MovieConstants.MOVIE_RELEASE_DATE, movieResponseList.get(position).getReleaseDate());
-                bundle.putString(MovieConstants.MOVIE_OVERVIEW, movieResponseList.get(position).getOverview());
-                bundle.putString(MovieConstants.MOVIE_VOTE_AVERAGE, String.valueOf(movieResponseList.get(position).getVoteAverage()));
-                bundle.putString(MovieConstants.MOVIE_POPULARITY, String.valueOf(movieResponseList.get(position).getPopularity()));
-                intent.putExtras(bundle);
+                intent.putExtra(MovieConstants.MOVIE_TITLE, movieResponseList.get(position).getTitle());
+                intent.putExtra(MovieConstants.MOVIE_POSTER_VIEWS, movieResponseList.get(position).getPosterPath());
+                intent.putExtra(MovieConstants.MOVIE_RELEASE_DATE, movieResponseList.get(position).getReleaseDate());
+                intent.putExtra(MovieConstants.MOVIE_OVERVIEW, movieResponseList.get(position).getOverview());
+                intent.putExtra(MovieConstants.MOVIE_VOTE_AVERAGE, String.valueOf(movieResponseList.get(position).getVoteAverage()));
+                intent.putExtra(MovieConstants.MOVIE_POPULARITY, String.valueOf(movieResponseList.get(position).getPopularity()));
 
                 mContext.startActivity(intent);
             }

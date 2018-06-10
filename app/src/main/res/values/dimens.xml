@@ -20,4 +20,5 @@
     <dimen name="text_size_300dp">300dp</dimen>
     <dimen name="text_20dp">20dp</dimen>
     <dimen name="size_250dp">250dp</dimen>
+    <dimen name="normal_speed">5dp</dimen>
 </resources>

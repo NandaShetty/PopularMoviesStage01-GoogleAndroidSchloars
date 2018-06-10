@@ -65,7 +65,7 @@ public class MovieActivity extends AppCompatActivity {
                 .build();
         AndroidNetworking.initialize(getApplicationContext(), okHttpClient);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         this.activity = MovieActivity.this;
 

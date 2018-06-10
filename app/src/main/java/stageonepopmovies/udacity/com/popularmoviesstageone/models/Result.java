@@ -1,11 +1,16 @@
 
 package stageonepopmovies.udacity.com.popularmoviesstageone.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.ArrayList;
 import java.util.List;
+
 import com.google.gson.annotations.SerializedName;
 
 @SuppressWarnings("unused")
-public class Result {
+public class Result implements Parcelable {
 
     @SerializedName("adult")
     private Boolean mAdult;
@@ -200,4 +205,59 @@ public class Result {
 
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.mAdult);
+        dest.writeString(this.mBackdropPath);
+        dest.writeList(this.mGenreIds);
+        dest.writeValue(this.mId);
+        dest.writeString(this.mOriginalLanguage);
+        dest.writeString(this.mOriginalTitle);
+        dest.writeString(this.mOverview);
+        dest.writeValue(this.mPopularity);
+        dest.writeString(this.mPosterPath);
+        dest.writeString(this.mReleaseDate);
+        dest.writeString(this.mTitle);
+        dest.writeValue(this.mVideo);
+        dest.writeValue(this.mVoteAverage);
+        dest.writeValue(this.mVoteCount);
+    }
+
+    public Result() {
+    }
+
+    protected Result(Parcel in) {
+        this.mAdult = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.mBackdropPath = in.readString();
+        this.mGenreIds = new ArrayList<Long>();
+        in.readList(this.mGenreIds, Long.class.getClassLoader());
+        this.mId = (Long) in.readValue(Long.class.getClassLoader());
+        this.mOriginalLanguage = in.readString();
+        this.mOriginalTitle = in.readString();
+        this.mOverview = in.readString();
+        this.mPopularity = (Double) in.readValue(Double.class.getClassLoader());
+        this.mPosterPath = in.readString();
+        this.mReleaseDate = in.readString();
+        this.mTitle = in.readString();
+        this.mVideo = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.mVoteAverage = (Double) in.readValue(Double.class.getClassLoader());
+        this.mVoteCount = (Long) in.readValue(Long.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<Result> CREATOR = new Parcelable.Creator<Result>() {
+        @Override
+        public Result createFromParcel(Parcel source) {
+            return new Result(source);
+        }
+
+        @Override
+        public Result[] newArray(int size) {
+            return new Result[size];
+        }
+    };
 }

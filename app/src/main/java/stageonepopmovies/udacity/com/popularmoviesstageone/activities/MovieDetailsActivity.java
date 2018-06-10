@@ -75,7 +75,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        if(null != savedInstanceState){
+        if (null != savedInstanceState) {
             moviePopularSelected = savedInstanceState.getString("MOVIE_POPULAR_MOVIES");
             moveTopRatedSelected = savedInstanceState.getString("MOVIE_TOP_RATED");
         }
@@ -84,8 +84,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("MOVIE_POPULAR_MOVIES",moviePopularSelected);
-        outState.putString("MOVIE_TOP_RATED",moveTopRatedSelected);
+        outState.putString("MOVIE_POPULAR_MOVIES", moviePopularSelected);
+        outState.putString("MOVIE_TOP_RATED", moveTopRatedSelected);
     }
 
     @Override
