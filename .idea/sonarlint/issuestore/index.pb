@@ -142,3 +142,5 @@ eapp/src/main/java/stageonepopmovies/udacity/com/popularmoviesstageone/models/Mo
 ]app/src/main/java/stageonepopmovies/udacity/com/popularmoviesstageone/models/ResultsItem.java,e\2\e21b4e97e812d8d53be9d3e1e4dc509c257e67cb
 —
 gapp/src/main/java/stageonepopmovies/udacity/com/popularmoviesstageone/adapters/MovieDetailsAdapter.java,6\5\65e74e88d21e246d83e57f5182b3974ca88d923b
+Y
+)app/src/main/res/layout/movie_details.xml,e\6\e6c176b63445e66012af23bfefdfa6ea1b72e641

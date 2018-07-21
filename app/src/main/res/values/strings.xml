@@ -97,4 +97,6 @@
     <string name="movie_overview">Overview</string>
     <string name="popularity">Popularity</string>
     <string name="release_date">Release Date</string>
+    <string name="trailers">Trailers</string>
+    <string name="movievideos">Movie videos</string>
 </resources>

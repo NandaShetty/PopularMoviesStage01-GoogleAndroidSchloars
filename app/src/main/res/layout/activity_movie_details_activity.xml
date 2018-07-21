@@ -203,7 +203,7 @@
             android:id="@+id/cardView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/constraint_bottom"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="@dimen/constraint_right"
             android:layout_marginLeft="@dimen/constraint_left"
             android:layout_marginRight="@dimen/constraint_right"
@@ -211,12 +211,11 @@
             android:layout_marginTop="@dimen/text_20dp"
             android:elevation="8dp"
             app:cardCornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView2"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
             <TextView
                 android:id="@+id/tv_movie_overview"
@@ -241,12 +240,43 @@
                 android:visibility="visible" />
 
 
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="85dp"
+            app:cardCornerRadius="@dimen/size_5dp"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cardView5"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_movies_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="horizontal">
+
+
+            </android.support.v7.widget.RecyclerView>
 
 
         </android.support.v7.widget.CardView>
 
 
         <android.support.v7.widget.CardView
+            android:id="@+id/cardView6"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_130dp"
             android:layout_marginBottom="8dp"
@@ -254,39 +284,44 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="@dimen/size_5dp"
+            app:cardElevation="@dimen/size_5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cardView5">
-
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:layout_constraintVertical_bias="1.0">
 
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_movies_horizontal"
+                android:id="@+id/rv_trailers_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="horizontal" />
 
 
-
-
-
         </android.support.v7.widget.CardView>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/trailers"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/cardView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 
     </android.support.constraint.ConstraintLayout>

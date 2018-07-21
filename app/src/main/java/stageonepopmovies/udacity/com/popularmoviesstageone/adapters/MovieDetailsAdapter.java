@@ -52,8 +52,6 @@ public class MovieDetailsAdapter extends RecyclerView.Adapter<MovieDetailsAdapte
         final String openYoutube = YOUTUBE_END_POINT_URL + movieResponseList.get(position).getKey();
         Log.d("MovieImageUrl", "youtube load url" + openYoutube);
         Picasso.get().load(movieImageUrl)
-                .resize(50,50)
-                .centerCrop()
                 .into(holder.movieView);
         holder.movieView.setOnClickListener(new View.OnClickListener() {
             @Override

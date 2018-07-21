@@ -1,12 +1,12 @@
 
-}squid:S1450"\Remove the "mPictureImage" field and declare it as a local variable in the relevant methods.(­ì˜ÿÿÿÿÿ8¥· áË,
-vsquid:S1450"ZRemove the "mPopularity" field and declare it as a local variable in the relevant methods.(©“Ùû8¥· áË,
-wsquid:S1450"[Remove the "mVoteAverage" field and declare it as a local variable in the relevant methods.(áË‡—8¥· áË,
-ysquid:S1450"XRemove the "mOverView" field and declare it as a local variable in the relevant methods.(€Ğ€Åùÿÿÿÿ8¥· áË,
-squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×İŠÎ8¥· áË,
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(³ŠæÛ8¥· áË,
-¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ¸™áúÿÿÿÿ8¥· áË,
-ssquid:S1450"WRemove the "mToolbar" field and declare it as a local variable in the relevant methods.(êˆ‹©8¥· áË,
-|squid:S1450"`Remove the "mConstraintLayout" field and declare it as a local variable in the relevant methods.(Æöƒå8¥· áË,
-|squid:S1450"[Remove the "mReleaseDate" field and declare it as a local variable in the relevant methods.(ÙÚÖšúÿÿÿÿ8¥· áË,
-osquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(ÏùĞÃûÿÿÿÿ8¥· áË,
+ssquid:S1450"WRemove the "mToolbar" field and declare it as a local variable in the relevant methods.(êˆ‹©8ß÷“ãË,
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×İŠÎ8ß÷“ãË,
+}squid:S1450"\Remove the "mPictureImage" field and declare it as a local variable in the relevant methods.(­ì˜ÿÿÿÿÿ8ß÷“ãË,
+ysquid:S1450"XRemove the "mOverView" field and declare it as a local variable in the relevant methods.(€Ğ€Åùÿÿÿÿ8ß÷“ãË,
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ¸™áúÿÿÿÿ8ß÷“ãË,
+|squid:S1450"[Remove the "mReleaseDate" field and declare it as a local variable in the relevant methods.(ÙÚÖšúÿÿÿÿ8ß÷“ãË,
+|squid:S1450"`Remove the "mConstraintLayout" field and declare it as a local variable in the relevant methods.(Æöƒå8ß÷“ãË,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(³ŠæÛ8ß÷“ãË,
+wsquid:S1450"[Remove the "mVoteAverage" field and declare it as a local variable in the relevant methods.(áË‡—8ß÷“ãË,
+vsquid:S1450"ZRemove the "mPopularity" field and declare it as a local variable in the relevant methods.(©“Ùû8ß÷“ãË,
+osquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(ÏùĞÃûÿÿÿÿ8ß÷“ãË,
