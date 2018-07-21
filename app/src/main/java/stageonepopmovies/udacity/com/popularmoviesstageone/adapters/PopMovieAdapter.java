@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +53,8 @@ public class PopMovieAdapter extends RecyclerView.Adapter<PopMovieAdapter.ItemHo
         final String movieImageUrl = MovieConstants.MOVIE_IMAGE_URL.concat(movieResponseList.get(position).getPosterPath());
 
         Picasso.get().load(movieImageUrl).into(holder.movieView);
-
+        Log.d("MovieId","MovieId"+movieResponseList.get(position).getId());
+        Log.d("PosterPath","PosterPath"+movieResponseList.get(position).getPosterPath());
         holder.movieView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +65,7 @@ public class PopMovieAdapter extends RecyclerView.Adapter<PopMovieAdapter.ItemHo
                 intent.putExtra(MovieConstants.MOVIE_OVERVIEW, movieResponseList.get(position).getOverview());
                 intent.putExtra(MovieConstants.MOVIE_VOTE_AVERAGE, String.valueOf(movieResponseList.get(position).getVoteAverage()));
                 intent.putExtra(MovieConstants.MOVIE_POPULARITY, String.valueOf(movieResponseList.get(position).getPopularity()));
-
+                intent.putExtra(MovieConstants.MOVIE_ID,movieResponseList.get(position).getId());
                 mContext.startActivity(intent);
             }
         });

@@ -1,14 +1,12 @@
 
-qsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(ÏùÐÃûÿÿÿÿ8˜éò½,
-]squid:UselessImportCheck"-Remove this unused import 'org.w3c.dom.Text'.(¶Äè‹þÿÿÿÿ8˜éò½,
-usquid:S1450"WRemove the "mToolbar" field and declare it as a local variable in the relevant methods.(êˆ‹©8˜éò½,
-msquid:UselessImportCheck"CRemove this unused import 'android.support.design.widget.Snackbar'.( À®p8˜éò½,
-squid:S1450"\Remove the "mPictureImage" field and declare it as a local variable in the relevant methods.(­ì˜ÿÿÿÿÿ8˜éò½,
-~squid:S1450"[Remove the "mReleaseDate" field and declare it as a local variable in the relevant methods.(ÙÚÖšúÿÿÿÿ8˜éò½,
-ysquid:S1450"[Remove the "mVoteAverage" field and declare it as a local variable in the relevant methods.(áË‡—8˜éò½,
-xsquid:S1450"[Remove the "mMovierating" field and declare it as a local variable in the relevant methods.(ßž¨F8˜éò½,
-zsquid:UselessImportCheck"ORemove this unused import 'android.support.design.widget.FloatingActionButton'.(„Ÿ¹¼8˜éò½,
-}squid:S1450"ZRemove the "mMovieTitle" field and declare it as a local variable in the relevant methods.(¢Üþúÿÿÿÿ8˜éò½,
-{squid:S1450"XRemove the "mOverView" field and declare it as a local variable in the relevant methods.(€Ð€Åùÿÿÿÿ8˜éò½,
-|squid:S1450"^Remove the "mLeftNavigation" field and declare it as a local variable in the relevant methods.(ñÃ·é8˜éò½,
-Usquid:S2589;"7Remove this expression which always evaluates to "true"(æÂªž8˜éò½,
+}squid:S1450"\Remove the "mPictureImage" field and declare it as a local variable in the relevant methods.(­ì˜ÿÿÿÿÿ8¥· áË,
+vsquid:S1450"ZRemove the "mPopularity" field and declare it as a local variable in the relevant methods.(©“Ùû8¥· áË,
+wsquid:S1450"[Remove the "mVoteAverage" field and declare it as a local variable in the relevant methods.(áË‡—8¥· áË,
+ysquid:S1450"XRemove the "mOverView" field and declare it as a local variable in the relevant methods.(€Ð€Åùÿÿÿÿ8¥· áË,
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ÝŠÎ8¥· áË,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(³ŠæÛ8¥· áË,
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ð¸™áúÿÿÿÿ8¥· áË,
+ssquid:S1450"WRemove the "mToolbar" field and declare it as a local variable in the relevant methods.(êˆ‹©8¥· áË,
+|squid:S1450"`Remove the "mConstraintLayout" field and declare it as a local variable in the relevant methods.(Æöƒå8¥· áË,
+|squid:S1450"[Remove the "mReleaseDate" field and declare it as a local variable in the relevant methods.(ÙÚÖšúÿÿÿÿ8¥· áË,
+osquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(ÏùÐÃûÿÿÿÿ8¥· áË,

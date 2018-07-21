@@ -1,3 +1,4 @@
 
-}squid:UselessImportCheck"RRemove this unused import 'stageonepopmovies.udacity.com.popularmoviesstageone.R'.(€ò³ö8áë¬¸¼,
-Œsquid:UselessImportCheck"\Remove this unused import 'stageonepopmovies.udacity.com.popularmoviesstageone.BuildConfig'.(‚ìØÚùÿÿÿÿ8áë¬¸¼,
+{squid:UselessImportCheck"RRemove this unused import 'stageonepopmovies.udacity.com.popularmoviesstageone.R'.(€ò³ö8…ØÐßË,
+Šsquid:UselessImportCheck"\Remove this unused import 'stageonepopmovies.udacity.com.popularmoviesstageone.BuildConfig'.(‚ìØÚùÿÿÿÿ8…ØÐßË,
+‚squid:S1192"aDefine a constant instead of duplicating this literal "b6b7a875d978c3b553d11ffae6765aee" 3 times.(ô³´©ÿÿÿÿÿ8…ØÐßË,

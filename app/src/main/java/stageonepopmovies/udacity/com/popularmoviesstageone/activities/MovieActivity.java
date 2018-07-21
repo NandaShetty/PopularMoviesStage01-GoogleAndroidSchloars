@@ -147,7 +147,7 @@ public class MovieActivity extends AppCompatActivity {
                                     popularMovieResponseList = response.getResults();
                                     mLayoutManager = new GridLayoutManager(MovieActivity.this, numberOfColumns());
                                     mRecyclerView.setLayoutManager(mLayoutManager);
-
+                                    Log.d("MovieId", String.valueOf(popularMovieResponseList.get(3).getId()));
                                     popMovieAdapter = new PopMovieAdapter(popularMovieResponseList, activity);
                                     mRecyclerView.setAdapter(popMovieAdapter);
                                     popMovieAdapter.notifyDataSetChanged();
