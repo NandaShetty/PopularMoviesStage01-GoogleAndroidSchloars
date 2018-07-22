@@ -28,10 +28,14 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import stageonepopmovies.udacity.com.popularmoviesstageone.R;
 import stageonepopmovies.udacity.com.popularmoviesstageone.adapters.MovieDetailsAdapter;
+import stageonepopmovies.udacity.com.popularmoviesstageone.adapters.MovieDetailsReviewAdapter;
 import stageonepopmovies.udacity.com.popularmoviesstageone.models.MovieVideosResponse;
+import stageonepopmovies.udacity.com.popularmoviesstageone.models.moviereview.MovieReviewResponse;
 import stageonepopmovies.udacity.com.popularmoviesstageone.utils.MovieConstants;
 import stageonepopmovies.udacity.com.popularmoviesstageone.utils.NetworkUtils;
+import stageonepopmovies.udacity.com.popularmoviesstageone.utils.SimpleDividerItemDecoration;
 
+import static stageonepopmovies.udacity.com.popularmoviesstageone.utils.MovieConstants.REVIEWS_END_POINT_URL;
 import static stageonepopmovies.udacity.com.popularmoviesstageone.utils.MovieConstants.TRAILERS_END_POINT_URL;
 
 public class MovieDetailsActivity extends AppCompatActivity {
@@ -45,7 +49,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
     private ProgressBar mProgress;
     private String moviePopularSelected;
     private String moveTopRatedSelected;
-    private RecyclerView rvloadtheMovie;
+    private RecyclerView rvloadtheMovie, mReviews_horizontal;
     private ConstraintLayout mConstraintLayout;
 
     @SuppressLint("CutPasteId")
@@ -66,6 +70,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         mToolbar = findViewById(R.id.toolbar);
         mConstraintLayout = findViewById(R.id.movie_details_layout);
         rvloadtheMovie = findViewById(R.id.rv_movies_horizontal);
+        mReviews_horizontal = findViewById(R.id.rv_reviews_horizontal);
         setSupportActionBar(mToolbar);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
@@ -112,15 +117,16 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
                                 //d.dispose();
                             }
+
                             @Override
                             public void onNext(MovieVideosResponse movieVideosResponse) {
 
                                 if (movieVideosResponse != null) {
                                     rvloadtheMovie.setHasFixedSize(true);
-                                    Log.d("MovieDetails", "onNext: "+movieVideosResponse.getResults());
+                                    Log.d("MovieDetails", "onNext: " + movieVideosResponse.getResults());
                                     rvloadtheMovie.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
                                     String youtubekey = movieVideosResponse.getResults().get(0).getKey();
-                                    Log.d("Movie Details","Youtube key:"+youtubekey);
+                                    Log.d("Movie Details", "Youtube key:" + youtubekey);
                                     rvloadtheMovie.setAdapter(new MovieDetailsAdapter(movieVideosResponse.getResults(), getApplicationContext()));
                                     new MovieDetailsAdapter(movieVideosResponse.getResults(), getApplicationContext()).notifyDataSetChanged();
                                 }
@@ -158,6 +164,72 @@ public class MovieDetailsActivity extends AppCompatActivity {
         } catch (Exception e) {
             Toast.makeText(this, "Oops something went wrong!!", Toast.LENGTH_SHORT).show();
         }
+
+        /*API request to load the movie review*/
+        try {
+
+            if (NetworkUtils.isOnline(MovieDetailsActivity.this)) {
+
+
+                Rx2AndroidNetworking.get(REVIEWS_END_POINT_URL)
+                        .addPathParameter("id", String.valueOf(getIntent().getExtras().getLong(MovieConstants.MOVIE_ID)))
+                        .build()
+                        .getObjectObservable(MovieReviewResponse.class)
+                        .subscribeOn(Schedulers.io())//worker thread
+                        .observeOn(AndroidSchedulers.mainThread())//main thread
+                        .subscribe(new Observer<MovieReviewResponse>() {
+                            @Override
+                            public void onSubscribe(Disposable d) {
+
+                                //d.dispose();
+                            }
+
+                            @Override
+                            public void onNext(MovieReviewResponse movieReviewResponse) {
+
+                                if (movieReviewResponse != null) {
+                                    mReviews_horizontal.setHasFixedSize(true);
+                                    Log.d("MovieReviewDetails", "onNext: " + movieReviewResponse.getResults());
+                                    mReviews_horizontal.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+                                    mReviews_horizontal.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
+                                    mReviews_horizontal.setAdapter(new MovieDetailsReviewAdapter(movieReviewResponse.getResults(), getApplicationContext()));
+                                    new MovieDetailsReviewAdapter(movieReviewResponse.getResults(), getApplicationContext()).notifyDataSetChanged();
+                                }
+                            }
+
+
+                            @Override
+                            public void onError(Throwable e) {
+                                Toast.makeText(MovieDetailsActivity.this, "Data not loaded properly", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onComplete() {
+
+                            }
+                        });
+            } else {
+                Snackbar snackbar = Snackbar
+                        .make(mConstraintLayout, "No internet connection!", Snackbar.LENGTH_LONG)
+                        .setAction("RETRY", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                            }
+                        });
+
+// Changing message text color
+                snackbar.setActionTextColor(Color.RED);
+
+// Changing action button text color
+                View sbView = snackbar.getView();
+                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setTextColor(Color.YELLOW);
+                snackbar.show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "Oops something went wrong!!", Toast.LENGTH_SHORT).show();
+        }
+
 
     }//end of on_create
 

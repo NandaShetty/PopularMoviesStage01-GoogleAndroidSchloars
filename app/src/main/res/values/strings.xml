@@ -99,4 +99,7 @@
     <string name="release_date">Release Date</string>
     <string name="trailers">Trailers</string>
     <string name="movievideos">Movie videos</string>
+    <string name="reviews">Reviews</string>
+    <string name ="no_data">Sorry no reviews found!!</string>
+    <string name="click_here_to_load_the_review">Click here to load the review</string>
 </resources>

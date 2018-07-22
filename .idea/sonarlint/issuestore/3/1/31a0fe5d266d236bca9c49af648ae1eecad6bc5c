@@ -1,10 +1,10 @@
 
-jsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(ç¿¡ô8³Ô–ÙË,
-squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ÝŠÎ8êä–ÙË,
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ð¸™áúÿÿÿÿ8êä–ÙË,
 squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤8êä–ÙË,
-squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ÝŠÎ8êä–ÙË,
-‡"squid:ClassVariableVisibilityCheck"TMake activity a static final constant or non-public and provide accessors if needed.(†Ù­ó8³Ô–ÙË,
-rsquid:S1450"QRemove the "id" field and declare it as a local variable in the relevant methods.(ôç¼Óþÿÿÿÿ8³Ô–ÙË,
 ¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ð¸™áúÿÿÿÿ8êä–ÙË,
 squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤8³Ô–ÙË,
-¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ð¸™áúÿÿÿÿ8êä–ÙË,
+jsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(ç¿¡ô8³Ô–ÙË,
+‡"squid:ClassVariableVisibilityCheck"TMake activity a static final constant or non-public and provide accessors if needed.(†Ù­ó8³Ô–ÙË,
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ÝŠÎ8êä–ÙË,
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ÝŠÎ8êä–ÙË,
+rsquid:S1450"QRemove the "id" field and declare it as a local variable in the relevant methods.(ôç¼Óþÿÿÿÿ8³Ô–ÙË,
